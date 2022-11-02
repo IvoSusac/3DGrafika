@@ -3,7 +3,7 @@ import math
 file = open("cylinder.obj", "w")
 
 r = 1
-vertexNum = 32
+vertexNum = 20
 
 angle = 360 / vertexNum
 
