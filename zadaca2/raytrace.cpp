@@ -198,7 +198,7 @@ int main()
     green.specular_coef = 1;
     green.phong_exp = 1000;
     
-    Material blue(Vec3f(0, 0, 1), 1);
+    Material blue(Vec3f(0, 0, 1), 0.5);
     blue.specular_coef = 1;
     blue.phong_exp = 200;
     
