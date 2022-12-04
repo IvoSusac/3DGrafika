@@ -8,3 +8,5 @@ struct Light
     
     Light(const Vec3f &position, const float &intensity) : position(position), intensity(intensity) {}
 };
+
+//

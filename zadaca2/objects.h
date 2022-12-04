@@ -136,6 +136,8 @@ struct Cuboid : Object {
 
         t = tMin;
 
+		// izracun normale
+		
         if (abs(ray.origin.x - c1.x) < 0.01)
             normal = Vec3f(-1, 0, 0);
         else if (abs(ray.origin.x - c2.x) < 0.01)

@@ -13,5 +13,5 @@ struct Material
     float opacity;
     
     Material(const Vec3f &color, const float opacity) : diffuse_color(color), opacity(opacity) {}
-    Material() : diffuse_color(Vec3f(0, 0, 0)), opacity(1) {}
+    Material() : diffuse_color(Vec3f(0, 0, 0)), opacity(1) {} // opacity 1 po defaultu
 };

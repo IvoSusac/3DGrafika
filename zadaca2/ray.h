@@ -11,3 +11,5 @@ class Ray
     Vec3f origin; 
     Vec3f direction; 
 }; 
+
+//
