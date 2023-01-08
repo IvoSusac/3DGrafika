@@ -16,7 +16,7 @@ const TGAColor green  = TGAColor(0, 255, 0, 255);
 
 void set_color(int x, int y, TGAImage &image, TGAColor color, bool invert = false)
 {
-    image.set(y, x, color);
+    image.set(x, y, color);
 }
 
 float line(float x0, float y0, float x1, float y1, float x, float y)
@@ -187,12 +187,12 @@ void draw_triangle_tex_corrected(TGAImage& image, float x0, float y0, float z0, 
             float gamma = line(x0, y0, x1, y1, x, y) / line(x0, y0, x1, y1, x2, y2);
 
             if (alpha > 0 && alpha < 1 && beta > 0 && beta < 1 && gamma > 0 && gamma < 1) {
-                int s = round(texture.get_width() * (alpha * u0 + beta * u1 + gamma * u2));
-                int t = round(texture.get_height() * (alpha * v0 + beta * v1 + gamma * v2));
+                float s = texture.get_width() * (alpha * u0 + beta * u1 + gamma * u2);
+                float t = texture.get_height() * (alpha * v0 + beta * v1 + gamma * v2);
                 float z = 1 / (alpha * z0 + beta * z1 + gamma * z2);
                 s = s * z;
                 t = t * z;
-                set_color(x, y, image, texture.get(s, t));
+                set_color(x, y, image, texture.get(round(s), round(t)));
             }
         }
     }
